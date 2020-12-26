@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>{{ post.title }}</title>{% endblock %}
+
+{% block content %}
+<section class="details">
+  <h1>{{ post.title }}</h1>
+  <p><strong>Post date: </strong>{{ post.date.date }}</p>
+  <p><strong>Author: </strong>{{ post.author }}</p>
+  <p><strong>Description:</strong></p>
+  <p>{{ post.description }}</p>
+  <aside class="comments">
+    <h3>Comments</h3>
+    <hr>
+    {% if post.comment_set.all %}
+      {% for com in post.comment_set.all %}
+      <p><span class="com-name">
+        {% if com.commenter %}
+        {{ com.commenter }}</span> 
+      <span class="com-date">({{ com.date }})
+        {% else %}Anonymoux{% endif %}</span> - <em>{{ com.comment }}</em></p>
+      <hr>
+      {% endfor %}
+    {% else %}
+    <p>No comment</p>
+    {% endif %}
+    <hr>
+    {% if user.is_authenticated %}
+    <a href="{% url 'add_comment' post.id %}">Add a new comment</a></p>
+    {% else %}
+    <p>Please, <a href="{% url 'login' %}?next={{ request.path }}">login</a> to add a new comment</p>
+    {% endif %}
+  </aside>
+</section>
+{% endblock %}

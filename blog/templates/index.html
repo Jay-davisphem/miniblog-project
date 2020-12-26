@@ -1,1 +1,28 @@
 {% extends 'base.html' %}
+
+{% block title %}<title>{{ index_title }}</title>{% endblock %}
+{% block hom_e %}
+<li class="pre-section">Home</li>
+{% endblock %}
+{% block content %}
+  <h1>daviSPhem's blog</h1>
+  <p>Welcome to my miniblog! Congratulations for making it here! You'll get access post that'll quench you thirst</p>
+  <p>What you might be intestered in: </p>
+  <ul>
+    <li><strong>{{ auth_counts }} authors</strong></li>
+    <li><strong>{{ post_counts }} blog posts</strong></li>
+    <li><strong>{{ best_blog }} is the best blog with {{ num }} comments</strong></li>
+  </ul>
+  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
+  <section class="abt-author">
+    <h2>About Author</h2>
+    {% load static %}
+    <img src="{% static 'images/author.png' %}">
+    <article>
+      <p>{{ author }} is Student of Obafemi Awolowo University. And that is me.</p>
+      <p>I have passion for programming things. I am a webapps developer and a versatile Data Scientist.I study Computer Engineering at Obafemi Awolowo University, Nigeria. I guess that makes me a Computer Engineer</p>
+      <p>You can view <a href="{{ my_github }}">my works on github</a></p>
+    </article>
+  </section>
+{% endblock %}

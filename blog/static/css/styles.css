@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+.pre-section{
+  color: #1a1a1a;
+  font-size: 2rem;
+}
+a:link{
+  color: #3344ff;
+  text-decoration: none;
+}
+a:visited{
+  color: #ff4433;
+}
+.com-name{
+  background-color: #a1a1ff;
+  border-radius:5px;
+  color: blue;
+}
+.com-date{
+  color: blue;
+}
+
+.abt-author img{
+  max-width: 300px;
+  max-height: 150px;
+  margin: 20px;
+}
+
+button.stat {
+  background-color: #4499ff;
+  color: white;
+  font-family: cursive;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  font-size: 15x;
+}
