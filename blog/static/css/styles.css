@@ -1,46 +1,40 @@
+/* Color scheme:
+ sh = shadow
+ li = light
+ dk = dark
+ #12232E     #EEFBFB       #007CC7         #203647        #4DA8DA
+dk blue   sh of li blue   lighter blue   sh of dk blue  lightest blue
+*/
 html {
   box-sizing: border-box;
+  font-size: 10px;
 }
+
 *, *::before, *::after{
   box-sizing: inherit;
 }
-.sidebar-nav {
-  margin-top: 20px;
-  padding: 0;
-  list-style: none;
+
+body{
+  margin: 0;
+  background-color: #12232e;
+  color: #eefbfb;
 }
-.pre-section{
-  color: #1a1a1a;
-  font-size: 2rem;
-}
-a:link{
-  color: #3344ff;
+
+a{
+  color: #007cc7;
   text-decoration: none;
 }
+
 a:visited{
-  color: #ff4433;
-}
-.com-name{
-  background-color: #a1a1ff;
-  border-radius:5px;
-  color: blue;
-}
-.com-date{
-  color: blue;
+  color: #4da8da;
 }
 
-.abt-author img{
-  max-width: 300px;
-  max-height: 150px;
-  margin: 20px;
-}
-
-button.stat {
-  background-color: #4499ff;
-  color: white;
-  font-family: cursive;
+a:hover, a:active, a:focus{
+  color: #1123ff;
   outline: none;
-  border: none;
-  border-radius: 25px;
-  font-size: 15x;
+  background: none;
+}
+
+header h1{
+  font-variant: small-caps;
 }

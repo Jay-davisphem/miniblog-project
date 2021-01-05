@@ -12,10 +12,9 @@
     <script src="{% static 'scripts/base.js' %}" defer></script>
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-2">
+    <header>
         {% block sidebar %}
+        <h1>daviSPhem blog</h1>
           <ul class="sidebar-nav">
             {% block hom_e %}
             <li><a href="{% url 'index' %}">Home</a></li>
@@ -23,87 +22,7 @@
             {% block blo_g %}
             <li><a href="{% url 'blogs' %}">All blogs</a></li>
             {% endblock %}
-            {% block bl<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>UK punk bands</title>
-  <!-- CSS_ADSBLOCK_START -->
-<link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/aaa/domainless-unknown.css" type="text/css" />
-<link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/aaa/page_2_5278fvmaalwezlbl5johgdgchza16tdnclfwjtueiz3zrng61y.css" type="text/css" />
-<link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/aaa/domainless.css" type="text/css" />
-<!-- CSS_ADSBLOCK_END -->
-</head>
-  <body>
-    <table>
-      <caption>A summary of the UK's most famous punk bands</caption>
-      <thead>
-        <tr>
-          <th scope="col">Band</th>
-          <th scope="col">Year formed</th>
-          <th scope="col">No. of Albums</th>
-          <th scope="col">Most famous song</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Buzzcocks</th>
-          <td>1976</td>
-          <td>9</td>
-          <td>Ever fallen in love (with someone you shouldn't've)</td>
-        </tr>
-        <tr>
-          <th scope="row">The Clash</th>
-          <td>1976</td>
-          <td>6</td>
-          <td>London Calling</td>
-        </tr>
-        <tr>
-          <th scope="row">The Damned</th>
-          <td>1976</td>
-          <td>10</td>
-          <td>Smash it up</td>
-        </tr>
-        <tr>
-          <th scope="row">Sex Pistols</th>
-          <td>1975</td>
-          <td>1</td>
-          <td>Anarchy in the UK</td>
-        </tr>
-        <tr>
-          <th scope="row">Sham 69</th>
-          <td>1976</td>
-          <td>13</td>
-          <td>If The Kids Are United</td>
-        </tr>
-        <tr>
-          <th scope="row">Siouxsie and the Banshees</th>
-          <td>1976</td>
-          <td>11</td>
-          <td>Hong Kong Garden</td>
-        </tr>
-        <tr>
-          <th scope="row">Stiff Little Fingers</th>
-          <td>1977</td>
-          <td>10</td>
-          <td>Suspect Device</td>
-        </tr>
-        <tr>
-          <th scope="row">The Stranglers</th>
-          <td>1974</td>
-          <td>17</td>
-          <td>No More Heroes</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <th scope="row" colspan="2">Total albums</th>
-          <td colspan="2">77</td>
-        </tr>
-      </tfoot>
-    </table>
-  </body>
-</html>og_r %}
+            {% block blogg_r%}
             <li><a href="{% url 'bloggers' %}">All bloggers</a></li>
             {% endblock %}
             <br>
@@ -115,13 +34,13 @@
             {% endif %}
           </ul>
         {% endblock %}
-        </div>
-        <div class="col-sm-10 ">
+        </header>
+        <main class="content">
         {% block content %}{% endblock %}
 
         {% block pagination %}
           {% if is_paginated %}
-          <div class="pagination">
+          <section class="pagination">
             <span class="page-links">
               {% if page_obj.has_previous %}
               <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
@@ -133,11 +52,15 @@
               <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
               {% endif %}
             </span>
-          </div>
+          </section>
           {% endif %}
         {% endblock %}
-      </div>
-    </div>
+        </main>
+    <footer>
+      {% block footer %}
+      <p>&copy; David Oluwafemi. All right reserved 2021.</p>
+      {% endblock %}
+    </footer>   
   </body>
 </html>
 
