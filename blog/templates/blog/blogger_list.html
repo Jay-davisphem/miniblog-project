@@ -4,14 +4,18 @@
 {% block blogg_r %}<li class="pre-section">All bloggers</li>{% endblock %}
 
 {% block content %}
-<h1>All bloggers</h1>
-{% if blogger_list %}
-<ul>
-  {% for blo in blogger_list %}
-  <li><a href="{{ blo.get_absolute_url }}">{{ blo.username}}</a></li>
-  {% endfor %}
-</ul>
-{% else %}
-  <p>Oops! No blogger yet</p>
-{% endif %}
+<section class="all-bloggers">
+  <h1>All bloggers</h1>
+  {% if blogger_list %}
+  <article>
+  <ul>
+    {% for blo in blogger_list %}
+    <li><a href="{{ blo.get_absolute_url }}">{{ blo.username}}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>Oops! No blogger yet</p>
+  </article>
+  {% endif %}
+</section>
 {% endblock %}

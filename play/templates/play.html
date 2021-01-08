@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+  </head>
+  <body>
+    <div class="mdiv">
+      <ul class="mul">
+        <div class="menu">MENU</div>
+        {% for i in lis_t %}
+        <li class="mli"><a href="#">{{ i }}</a>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

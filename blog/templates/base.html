@@ -14,7 +14,7 @@
   <body>
     <header>
         {% block sidebar %}
-        <h1>daviSPhem blog</h1>
+        <h1>davi<span>SP</span>hem blog</h1>
           <ul class="sidebar-nav">
             {% block hom_e %}
             <li><a href="{% url 'index' %}">Home</a></li>
@@ -35,6 +35,7 @@
           </ul>
         {% endblock %}
         </header>
+        <hr style="border: 0.02rem dashed #007cc7;">  <hr>
         <main class="content">
         {% block content %}{% endblock %}
 
@@ -57,6 +58,7 @@
         {% endblock %}
         </main>
     <footer>
+      <hr>
       {% block footer %}
       <p>&copy; David Oluwafemi. All right reserved 2021.</p>
       {% endblock %}

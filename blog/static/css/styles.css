@@ -15,9 +15,22 @@ html {
 }
 
 body{
-  margin: 0;
+  --bord: 2px solid #007CC7;
+  --rad: 1rem;
+  --shdow: 0.5px 0.5px 2px #007CC7,
+              1px 1px #203647,
+             -0.5px -0.5px 2px #007CC7,
+             -1px -1px #203647,
+             inset 0.5px 0.5px 5px yellow,     
+             inset -0.5px -0.5px 5px yellow,
+             inset 1px 1px 5px red,
+             inset -1px -1px 5px red;
+}
+
+body{
   background-color: #12232e;
   color: #eefbfb;
+  font-size: 1.5rem;
 }
 
 a{
@@ -34,7 +47,186 @@ a:hover, a:active, a:focus{
   outline: none;
   background: none;
 }
-
+*::selection{
+  background-color: #aa992288;
+}
 header h1{
+  margin: 0;
   font-variant: small-caps;
+  text-align: center;
+  font-size: 3.5rem;
+  text-shadow: 1px 1px 5px red,
+               -1px -1px 5px red,
+               2px 2px 5px yellow,
+               -2px -2px 5px yellow;
+}
+
+header h1 span{
+  color: #4da8da;
+}
+.abt-author img{
+  margin-right: 1rem;
+  max-width: 20%;
+  border-radius: 10rem;
+  float: left;
+  shape-outside: circle(50%);
+}
+
+.sidebar-nav{
+  list-style-type: none;
+  padding: 1rem;
+  font-size: 3rem;
+  border: 2px solid #007CC7;
+  border-radius: 1rem;
+  box-shadow: 0.5px 0.5px 2px #007CC7,
+              1px 1px #203647,
+              -0.5px -0.5px 2px #007CC7,
+              -1px -1px #203647,
+              inset 0.5px 0.5px 5px yellow,
+              inset -0.5px -0.5px 5px yellow,
+              inset 1px 1px 5px red,
+              inset -1px -1px 5px red;
+}
+/* Start|| PLAY App Menu */
+.mul .mli{
+  display: none;
+  padding: 0 0 1rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
+.menu{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.mul:hover > li{
+  display: block;
+}
+
+.mul{
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0 0 0;
+    list-style: none;
+    background-color: #111;
+    background-image: linear-gradient(#444, #111);
+    border-radius: 5rem;
+    box-shadow: 0 0.2rem 0.1rem #9c9c9c;
+}
+
+.mul .mli:hover {
+  width: 100%;
+  background-color: #12232e;
+}
+
+.mul .mli:hover:last-child{
+  border-radius: 5rem;
+}
+/* End of Play app */
+/* Website footer */
+footer p{
+  position: static;
+  font-size: 0.8rem;
+  bottom: -3rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px red,
+              -1px -1px 2px red,     
+              2px 2px 2px yellow,
+              -2px -2px 2px yellow;
+}
+
+footer hr{
+  margin-top: 3rem;
+  border: 0.02rem solid #007cc7;
+  border-radius: 5rem;
+}
+header ~ hr{
+  width: 30%;
+  border: 0.02rem solid #007cc7;
+  border-radius: 5rem;
+}
+/* || Website index */
+article{
+  padding: 1rem;
+  border: var(--bord);
+  border-radius: var(--rad);
+  box-shadow: var(--shdow);
+}
+
+section[class*="all-blo"] ul li{
+  margin-bottom: 1rem;
+}
+article p{
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+h2,
+section[class*="all-blo"] h1{
+  font-variant: small-caps;
+  text-decoration: underline #007cc7;
+}
+
+.stat{
+  outline: none;
+  width: 2rem;
+  border: none;
+  border-radius: 20rem;
+  background-image: linear-gradient(to bottom right, #12232E 10%, #EEFBFB 15%, #007CC7 50%, #203647 15%, #4DA8DA);
+  color: #eefbfb;
+  font-variant: small-caps;
+  vertical-align: middle;
+}
+i
+.stat:hover{
+  border: none;
+  outline: none;
+}
+/* || Post Details */
+.details h1{
+  display: inline-block;
+  border-left: .3rem solid #007cc7;
+  border-bottom: .1rem solid #007cc7;
+  border-radius: 20rem;
+  padding: 0 1rem;
+  margin-bottom: 0;
+}
+.details > p{
+  margin: 1rem 0;
+  border-bottom: .1rem solid yellow;
+  border-radius: 20rem;
+  padding: 0 1rem;
+}
+
+.details article{
+  line-height: 2rem;
+  border: 1px solid #007cc7;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 5px #007cc7,
+              -2px -2px 5px #007cc7;
+}
+
+/* || Details comment ↑↑ */
+.comments h3,
+.comments hr{
+  border-bottom: .2rem solid #007cc7;
+  box-shadow: 2px 2px 5px #007cc7;
+}
+
+.comments hr{
+  border: none;
+  height: 1px;
+  box-shadow: -2px -2px 5px yellow,
+              -1px -1px 3px red;
+  background: #007cc7;
+}
+.com-date{
+  color: yellow;
+}
+
+.com-name{
+  color: #007cc7;
+}
+
+em{
+  line-height: 5rem;
 }
