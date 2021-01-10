@@ -24,7 +24,7 @@ class Commenter(models.Model):
     """Model representing those who comments on a post
     Model representing a blogger.
     """
-    username = models.CharField(max_length=100)
+    username = models.CharField(max_length=100, blank=True, null=True)
     class Meta:
         ordering = ['username']
     def __str__(self):
@@ -32,7 +32,7 @@ class Commenter(models.Model):
 
 class Blogger(Commenter):
     """Model representing bloggers on the page"""
-    profile = models.TextField('Bio', help_text='Enter blogger biography')
+    profile = models.TextField('Bio', help_text='Enter blogger biography', blank=True, null=True)
 
     class Meta:
         permissions = (('can_post_blog', 'Post blog post'), )

@@ -4,11 +4,12 @@
 <p>Post your comment for: <a href="{% url 'post-detail' post.pk %}">{{post.title}}</a></p>
 
 <form action="" method="post">
+  <section class="com-form">
     {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit" />
-
+    <p>
+    {{ form.as_p }}
+    </p>
+    <input type="submit" value="Submit"/>
+  </section>
 </form>
 {% endblock %}

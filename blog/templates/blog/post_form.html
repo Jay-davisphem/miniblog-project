@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% if perms.blog.can_post_blog %}
+  <section>
+    <h2 class="new-post">New Post</h2>
+  <form action="" method="post" class="cre res">
+  {% csrf_token %}
+    <table>
+    {{ form.as_table}}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+  {% else %}
+  <p>You can't access this page!</p>
+  {% endif %}
+  </section>
+{% endblock %}

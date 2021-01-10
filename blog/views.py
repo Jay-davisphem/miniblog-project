@@ -54,7 +54,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-class CommentCreate(LoginRequiredMixin, CreateView, Commenter):
+class CommentCreate(LoginRequiredMixin, CreateView):
     model = Comment
     fields = ['comment',]
     template_name = 'blog/comment_form.html'
@@ -84,3 +84,9 @@ class CommentCreate(LoginRequiredMixin, CreateView, Commenter):
         After posting comment return to associated blog.
         """
         return reverse('post-detail', kwargs={'pk': self.kwargs['pk'],})
+
+class BlogCreate(CreateView):
+    model = Post
+    fields = ['title', 'date', 'author', 'description']
+    initial = {'author': 'Blogger'}
+    permission_required = 'blog.can_post_blog'
