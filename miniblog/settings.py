@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 't6#-3zfqky21))fj@h%m@#lxhbr#a5
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 ALLOWED_HOSTS = [
-    'femiblog.herokuapp.com',
+    'femijosh.herokuapp.com',
     '127.0.0.1'
 ]
 
