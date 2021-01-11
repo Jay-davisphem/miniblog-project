@@ -10,7 +10,7 @@ class Post(models.Model):
         'Blogger', on_delete=models.SET_NULL, null=True
     )
     description = models.TextField(
-        max_length=5000, help_text='Enter your blog post here'
+        help_text='Enter your blog post here'
     )
     class Meta:
         ordering = ['date']
